@@ -118,22 +118,32 @@
 </div> -->
 
 <div class="timeSeg">
-  <ng-container *ngFor="let item of timeSegArr">
-    <div class="digt" *ngIf="item.name != ':'">
-      <div class="topsection zero" [class.borderon]="item.seg.zero"></div>
-      <div class="topseg">
-        <div class="topleft five" [class.borderon]="item.seg.five"></div>
-        <div class="topright one" [class.borderon]="item.seg.one"></div>
-      </div>
-      <div class="centseg six" [class.borderon]="item.seg.six"></div>
-      <div class="botseg">
-        <div class="botleft four" [class.borderon]="item.seg.four"></div>
-        <div class="botright two" [class.borderon]="item.seg.two"></div>
-      </div>
-      <div class="botsection three" [class.borderon]="item.seg.three"></div>
-    </div>
-    <div class="colon" *ngIf="item.name == ':'">:</div>
-  </ng-container>
+    <ng-container *ngFor="let item of timeSegArr">
+        <div class="digt" *ngIf="item.name != ':'">
+            <div style="padding: 0px 10px">
+                <div class="topsection zero" [class.borderon]="item.seg.zero"></div>
+            </div>
+            <!-- <div class="topsection zero" [class.borderon]="item.seg.zero"></div> -->
+            <div class="topseg">
+                <div class="topleft five" [class.borderon]="item.seg.five"></div>
+                <div class="topright one" [class.borderon]="item.seg.one"></div>
+            </div>
+            <div style="padding: 0px 10px">
+                <div class="centseg six" [class.borderon]="item.seg.six"></div>
+            </div>
+            <div class="botseg">
+                <div class="botleft four" [class.borderon]="item.seg.four"></div>
+                <div class="botright two" [class.borderon]="item.seg.two"></div>
+            </div>
+            <div style="padding: 0px 10px">
+                <div class="botsection three" [class.borderon]="item.seg.three"></div>
+            </div>
+        </div>
+        <div class="colon" *ngIf="item.name == ':'">
+            <div class="dot" [class.colonon]="iscolonon"></div>
+            <div class="dot" [class.colonon]="iscolonon"></div>
+        </div>
+    </ng-container>
 </div>
 
 <!-- <div *ngIf="false" class="digt">

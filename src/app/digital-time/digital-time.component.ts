@@ -48,6 +48,7 @@ export class DigitalTimeComponent {
   ];
   // spltTime = ['1', '2', ':', '3', '4', ':', '5', '9'];
   timeSegArr: any[] = [];
+  iscolonon = true
   // arr = [
   //   {
   //     name: 1,
@@ -87,6 +88,10 @@ export class DigitalTimeComponent {
     let splTime = ['1', '2', ':', '3', '4', ':', '5', '9'];
     // this.getSegmentDet();
     setInterval(() => {
+      this.iscolonon = !this.iscolonon
+    }, 500);
+    setInterval(() => {
+      // this.iscolonon = !this.iscolonon
       this.getSegmentDet();
     }, 1000);
 
@@ -101,8 +106,8 @@ export class DigitalTimeComponent {
   getSegmentDet() {
     const dt = new Date();
     let timeStr =
-      (dt.getHours() <= 9 ? '0' : '') +
-      dt.getHours() +
+      (dt.getHours() <= 9 ? '0' : (dt.getHours() > 12)? String((dt.getHours() - 12)) : '') +
+      // dt.getHours() +
       ':' +
       (dt.getMinutes() <= 9 ? '0' : '') +
       dt.getMinutes() +
