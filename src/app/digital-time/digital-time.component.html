@@ -1,0 +1,152 @@
+<p>digital-time works!</p>
+
+<!-- <div class="container">
+  <div class="left">
+    <ng-container *ngFor="let item of leftlist">
+      <span
+        class="chip left-chip"
+        draggable="true"
+        (dragstart)="dragstart($event, item)"
+      >
+        {{ item.name }}
+      </span>
+    </ng-container>
+  </div>
+  <div class="right" (dragover)="dragend($event)">
+    <ng-container *ngFor="let item of rightlist">
+      <span class="chip right-chip" draggable="true">
+        {{ item.name }}
+      </span>
+    </ng-container>
+  </div>
+</div> -->
+
+<!-- <div class="clock">
+  <div class="digit">
+    <div class="segment top" [class.on]="topOn"></div>
+    <div class="segment top-right" [class.on]="topRightOn"></div>
+    <div class="segment bottom-right" [class.on]="bottomRightOn"></div>
+    <div class="segment bottom" [class.on]="bottomOn"></div>
+    <div class="segment bottom-left" [class.on]="bottomLeftOn"></div>
+    <div class="segment top-left" [class.on]="topLeftOn"></div>
+    <div class="segment center" [class.on]="centerOn"></div>
+  </div>
+</div> -->
+
+<!-- <div class="outter">
+  <div class="segmnt">
+    <div class="cent"></div>
+  </div>
+</div> -->
+
+<!-- <div class="digt">
+  <div class="top-seg"></div>
+  <div class="topright-seg"></div>
+  <div class="botright-seg"></div>
+  <div class="bottom-seg"></div>
+  <div class="botleft-seg"></div>
+  <div class="topleft-seg"></div>
+  <div class="centr-seg"></div>
+</div> -->
+
+<!-- ------------------------------ -->
+<!-- <div class="digt">
+  <div class="topsection two" [class.borderon]="sTwo">2</div>
+
+  <div class="topseg">
+    <div class="topleft one" [class.borderon]="sOne">1</div>
+    <div class="topright three" [class.borderon]="sThree">3</div>
+  </div>
+  <div class="centseg seven" [class.borderon]="sSeven">7</div>
+  <div class="botseg">
+    <div class="botleft six" [class.borderon]="sSix">6</div>
+    <div class="botright four" [class.borderon]="sFour">4</div>
+  </div>
+  <div class="botsection five" [class.borderon]="sFive">5</div>
+</div> -->
+
+<!-- ---------- ------------------------------ -->
+<!-- <div class="digt">
+  <div class="topsection" [class.borderon]="sOne">1</div>
+
+  <div class="topseg">
+    <div class="topleft" [class.borderon]="sZero">0</div>
+    <div class="topright" [class.borderon]="sTwo">2</div>
+  </div>
+  <div class="centseg" [class.borderon]="sSix">6</div>
+  <div class="botseg">
+    <div class="botleft" [class.borderon]="sFive">5</div>
+    <div class="botright" [class.borderon]="sThree">3</div>
+  </div>
+  <div class="botsection" [class.borderon]="sFour">4</div>
+</div> -->
+
+<!-- ---------- -->
+<!-- 
+<div class="digt">
+  <div [class.borderon]="sOne">1</div>
+
+  <div class="topseg">
+    <div [class.borderon]="sSix">6</div>
+    <div [class.borderon]="sTwo">2</div>
+  </div>
+  <div [class.borderon]="sSeven">7</div>
+  <div class="botseg">
+    <div [class.borderon]="sFive">5</div>
+    <div [class.borderon]="sThree">3</div>
+  </div>
+  <div [class.borderon]="sFour">4</div>
+</div> -->
+
+------------------------------
+<!-- ******  7 SEGMENT   ****** -->
+<!-- <div class="timSeg">
+  <div class="digt">
+    <div class="topsection two" [class.borderon]="sZero"></div>
+
+    <div class="topseg">
+      <div class="topleft one" [class.borderon]="sFive"></div>
+      <div class="topright three" [class.borderon]="sOne"></div>
+    </div>
+    <div class="centseg seven" [class.borderon]="sSix"></div>
+    <div class="botseg">
+      <div class="botleft six" [class.borderon]="sFour"></div>
+      <div class="botright four" [class.borderon]="sTwo"></div>
+    </div>
+    <div class="botsection five" [class.borderon]="sThree"></div>
+  </div>
+</div> -->
+
+<div class="timeSeg">
+  <ng-container *ngFor="let item of timeSegArr">
+    <div class="digt" *ngIf="item.name != ':'">
+      <div class="topsection zero" [class.borderon]="item.seg.zero"></div>
+      <div class="topseg">
+        <div class="topleft five" [class.borderon]="item.seg.five"></div>
+        <div class="topright one" [class.borderon]="item.seg.one"></div>
+      </div>
+      <div class="centseg six" [class.borderon]="item.seg.six"></div>
+      <div class="botseg">
+        <div class="botleft four" [class.borderon]="item.seg.four"></div>
+        <div class="botright two" [class.borderon]="item.seg.two"></div>
+      </div>
+      <div class="botsection three" [class.borderon]="item.seg.three"></div>
+    </div>
+    <div class="colon" *ngIf="item.name == ':'">:</div>
+  </ng-container>
+</div>
+
+<!-- <div *ngIf="false" class="digt">
+  <div class="topsection two" [class.borderon]="sZero"></div>
+
+  <div class="topseg">
+    <div class="topleft one" [class.borderon]="sFive"></div>
+    <div class="topright three" [class.borderon]="sOne"></div>
+  </div>
+  <div class="centseg seven" [class.borderon]="sSix"></div>
+  <div class="botseg">
+    <div class="botleft six" [class.borderon]="sFour"></div>
+    <div class="botright four" [class.borderon]="sTwo"></div>
+  </div>
+  <div class="botsection five" [class.borderon]="sThree"></div>
+</div> -->
