@@ -82,7 +82,6 @@ export class DigitalTimeComponent {
     // const a = new Function('a', 'b', 'return a+b');
     // let ans = a(1, 4);
     // console.log(ans);
-    debugger;
     let num = 0;
     let time = '12:34:59';
     let splTime = ['1', '2', ':', '3', '4', ':', '5', '9'];
