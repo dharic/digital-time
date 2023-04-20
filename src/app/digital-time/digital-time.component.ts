@@ -106,7 +106,7 @@ export class DigitalTimeComponent {
   getSegmentDet() {
     const dt = new Date();
     let timeStr =
-      (dt.getHours() <= 9 ? '0' : (dt.getHours() > 12)? String((dt.getHours() - 12)) : '') +
+      (dt.getHours() <= 9 ? '0' : (dt.getHours() > 12)? String((dt.getHours() - 12)) : dt.getHours()) +
       // dt.getHours() +
       ':' +
       (dt.getMinutes() <= 9 ? '0' : '') +
